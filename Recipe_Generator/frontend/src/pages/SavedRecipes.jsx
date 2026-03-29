@@ -63,7 +63,7 @@ export default function SavedRecipes({ savedRecipes }) {
                                 />
                                 <div className="p-4 flex flex-col justify-between flex-1">
                                     <h3 className="text-lg font-semibold uppercase text-gray-800 dark:text-gray-100 mb-2">
-                                        {recipe.title}
+                                        {recipe.title} 
                                     </h3>
                                     <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
                                         <strong>Ingredients:</strong> {recipe.ingredients.join(", ")}

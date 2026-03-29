@@ -23,6 +23,7 @@ export default function SignUp() {
     try {
         const res = await axios.post("http://localhost:3002/user", formData);
         alert("Signup Successful!");
+        setFormData({ name: "", username: "", password: "" });
     } catch (err) {
         console.error(err);
         // Use optional chaining to safely access error message

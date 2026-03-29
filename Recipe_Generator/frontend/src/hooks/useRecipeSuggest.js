@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 
-const API_KEY = ""; 
-
 export function useRecipeSuggest(query) {
     const [recipes, setRecipes] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -16,7 +14,7 @@ export function useRecipeSuggest(query) {
 
             try {
                 const response = await fetch(
-                    `https://api.spoonacular.com/recipes/complexSearch?query=${encodeURIComponent(query)}&number=6&apiKey=${API_KEY}`
+                    `http://localhost:3002/api/suggest/recipes?query=${encodeURIComponent(query)}`
                 );
 
                 if (!response.ok) {
