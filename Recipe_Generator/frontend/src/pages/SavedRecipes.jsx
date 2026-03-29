@@ -17,7 +17,7 @@ export default function SavedRecipes({ savedRecipes }) {
             const token = localStorage.getItem("token");
 
             await axios.post(
-                "http://localhost:3002/recipes/rate",
+                `${import.meta.env.VITE_API_URL}/recipes/rate`,
                 { recipeId, rating: newRating },
                 {
                     headers: {

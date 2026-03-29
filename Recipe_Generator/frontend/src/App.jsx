@@ -24,7 +24,7 @@ function App() {
             return; 
         }
 
-        const res = await axios.get("http://localhost:3002/recipes", {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/recipes`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -55,7 +55,7 @@ if (loading) {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:3002/recipes/save",
+        `${import.meta.env.VITE_API_URL}/recipes/save`,
         { ...recipe, ingredients },
         {
           headers: {

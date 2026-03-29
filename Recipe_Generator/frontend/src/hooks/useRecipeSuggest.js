@@ -14,7 +14,7 @@ export function useRecipeSuggest(query) {
 
             try {
                 const response = await fetch(
-                    `http://localhost:3002/api/suggest/recipes?query=${encodeURIComponent(query)}`
+                    `${import.meta.env.VITE_API_URL}/api/suggest/recipes?query=${encodeURIComponent(query)}`
                 );
 
                 if (!response.ok) {

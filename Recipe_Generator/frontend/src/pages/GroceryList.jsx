@@ -8,7 +8,7 @@ export default function GroceryList() {
     const fetchGrocery = async () => {
         try {
             const token = localStorage.getItem("token");
-            const res = await axios.get("http://localhost:3002/grocery", {
+            const res = await axios.get(`${import.meta.env.VITE_API_URL}/grocery`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setItems(res.data.items);
@@ -29,7 +29,7 @@ export default function GroceryList() {
         try {
             const token = localStorage.getItem("token");
             const res = await axios.post(
-                "http://localhost:3002/grocery/add",
+                `${import.meta.env.VITE_API_URL}/grocery/add`,
                 { item: newItem },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -50,7 +50,7 @@ export default function GroceryList() {
             return;
         }
 
-        const res = await axios.post("http://localhost:3002/grocery/generate", {}, {
+        const res = await axios.post(`${import.meta.env.VITE_API_URL}/grocery/generate`, {}, {
             headers: { Authorization: `Bearer ${token}` },
         });
         setItems(res.data.grocery.items);  
@@ -62,7 +62,7 @@ export default function GroceryList() {
         try {
             const token = localStorage.getItem("token");
             const res = await axios.post(
-                "http://localhost:3002/grocery/delete",
+                `${import.meta.env.VITE_API_URL}/grocery/delete`,
                 { item: itemToDelete },
                 { headers: { Authorization: `Bearer ${token}` } }
             );

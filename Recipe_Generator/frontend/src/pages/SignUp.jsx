@@ -21,7 +21,7 @@ export default function SignUp() {
     e.preventDefault();
     // You can add API call here for signup
     try {
-        const res = await axios.post("http://localhost:3002/user", formData);
+        const res = await axios.post(`${import.meta.env.VITE_API_URL}/user`, formData);
         alert("Signup Successful!");
         setFormData({ name: "", username: "", password: "" });
     } catch (err) {
